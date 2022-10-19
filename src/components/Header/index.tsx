@@ -1,13 +1,9 @@
-import { HeaderDiv } from "./style"
+import { HeaderDiv } from "./style";
 
-
-
-export function Header(){
-
-    return (
-        <HeaderDiv>
-            <div>Play Books</div>
-        </HeaderDiv>
-    )
-
+export function Header() {
+  return (
+    <HeaderDiv>
+      <div>Play Books</div>
+    </HeaderDiv>
+  );
 }
