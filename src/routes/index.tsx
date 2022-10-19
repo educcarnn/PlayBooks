@@ -3,6 +3,9 @@ import { Contents } from "../pages/Contents";
 import { Home } from "../pages/Home";
 
 export const Routes = () => {
+
+  
+
   return(
     <BrowserRouter>
     <Switch>

@@ -8,16 +8,17 @@ interface StatesProps{
     setIsOpen: Dispatch<SetStateAction<boolean>>
 }
 
-export const userContext = createContext<StatesProps>({} as StatesProps)
-function States({children}: StatesChildren){
+export const userAddStates = createContext<StatesProps>({} as StatesProps)
+function StatesProvider({children}: StatesChildren){
 
     const [isOpen, setIsOpen] = useState(false)
+    
     return(
-        <userContext.Provider value={{isOpen, setIsOpen}}>
+        <userAddStates.Provider value={{isOpen, setIsOpen}}>
             {children}
-        </userContext.Provider> 
+        </userAddStates.Provider> 
     )
 
 }
 
-export default States
+export default StatesProvider
