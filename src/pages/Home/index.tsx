@@ -1,10 +1,12 @@
-function Home(){
+import { Header } from "../../components/Header"
+
+
+export function Home(){
     return(
         <div>
-            <div>Play Books</div>
+            <Header/>
         </div>
     )
 
 }
 
-export default Home
