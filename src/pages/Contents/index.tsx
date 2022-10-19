@@ -11,8 +11,18 @@ import { api } from "../../services/api";
 import { Header } from "../../components/Header";
 
 export function Contents() {
+
+  const [open, setOpen] = useState(false)
+
   interface ListProps {
     id: string;
+    saleInfo: {
+      country: string;
+    };
+    volumeInfo:{
+      title: string;
+      description: string;
+    }
   }
 
   const [list, setList] = useState<ListProps[]>([]);
@@ -28,7 +38,7 @@ export function Contents() {
     <div>
       <Header />
       <div>
-      {/* <Swiper
+        {/* <Swiper
             slidesPerView={1}
             spaceBetween={10}
             pagination={{
@@ -62,13 +72,27 @@ export function Contents() {
             </SwiperSlide>
           </Swiper> */}
         {list?.map((item) => (
-            <li key={item.id}>
-            
-              <div></div>
-            </li>
+          <li key={item.id}>
+            <div>
+              {/* <img src={} alt="" /> */}
+              <span>{item.volumeInfo.title}</span>
+              <span>{item.saleInfo.country}</span>
+              <button onClick={() => setOpen(true)}>Mostrar descrições</button>
+              {open? (
+                  (
+                  <div>
+                    <span onClick={() => setOpen(false)}>{"X"}</span>
+                     <span>{item.volumeInfo.description}</span>
+                  </div>)
+              ) : (
+              (null)
+              )}
+              
+            </div>
+          </li>
         ))}
 
-           {/* <li id={item.id}>
+        {/* <li id={item.id}>
                 <div>Imagem</div>
                 <div>Resumo</div>
                 <div>Ebook</div>
