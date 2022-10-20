@@ -69,14 +69,16 @@ export function Contents() {
         {list?.map((item) => (
           <li key={item.id}>
             <div>
-              <div></div>
+              <div>
+                <img src={item.volumeInfo.imageLinks.thumbnail} alt="" />
+              </div>
               <div>
                   <p>{item.volumeInfo.title}</p>
                   <p>{item.volumeInfo.publishedDate}</p>
                   <span>{item.volumeInfo.pageCount}</span>
               </div>
               <div>
-                <span>{item.saleInfo.language}</span>
+                <span>{item.volumeInfo.language}</span>
                 <span>{item.volumeInfo.printType}</span>
                 <a href={item.volumeInfo.previewLink} target="_blank">
                   Mais informações
@@ -86,15 +88,7 @@ export function Contents() {
           </li>
         ))}
 
-        {/* <li id={item.id}>
-                <div>Imagem</div>
-                <div>Resumo</div>
-                <div>Ebook</div>
-                <div>
-                  <div>Autores</div>
-                  <div>País</div>
-                </div>
-              </li> */}
+  
       </div>
     </div>
   );

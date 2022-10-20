@@ -15,6 +15,11 @@ interface ListProps {
   };
   volumeInfo: {
     title: string;
+    imageLinks: {
+        thumbnail: string;
+    }
+        
+  
     language: string;
     printType: string;
     description: string;
