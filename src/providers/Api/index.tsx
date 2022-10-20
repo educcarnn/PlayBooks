@@ -8,10 +8,10 @@ import {
 } from "react";
 import { api } from "../../services/api";
 
-interface ListProps {
+export interface ListProps {
   id: string;
   saleInfo: {
-    country?: string;
+    country: string;
   };
   volumeInfo: {
     title: string;
@@ -30,6 +30,8 @@ interface ListProps {
 interface ListData {
   list: ListProps[];
   setList: Dispatch<SetStateAction<ListProps[]>>;
+  filter: ListProps[];
+  setFilter: Dispatch<SetStateAction<ListProps[]>>;
 }
 
 interface ApiChildren {
@@ -40,16 +42,17 @@ export const userAddApi = createContext<ListData>({} as ListData);
 
 export function ApiProvider({ children }: ApiChildren) {
   const [list, setList] = useState<ListProps[]>([]);
+  const [filter, setFilter] = useState<ListProps[]>([]);
 
   useEffect(() => {
     api.get("/volumes?q=search+terms").then((res) => {
       setList(res.data.items);
-      console.log(res.data.items);
+      setFilter(res.data.items);
     });
   }, []);
 
   return (
-    <userAddApi.Provider value={{ list, setList }}>
+    <userAddApi.Provider value={{ list, setList, filter, setFilter }}>
       {children}
     </userAddApi.Provider>
   );

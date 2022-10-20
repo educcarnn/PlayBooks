@@ -1,20 +1,20 @@
-import { createContext, ReactNode, useContext, SetStateAction, Dispatch, useState} from "react"
+import { createContext, ReactNode, SetStateAction, Dispatch, useState} from "react"
 
 interface StatesChildren{
     children: ReactNode;
 }
 interface StatesProps{
-    isOpen: boolean;
-    setIsOpen: Dispatch<SetStateAction<boolean>>
+    value: string;
+    setValue: Dispatch<SetStateAction<string>>
 }
 
 export const userAddStates = createContext<StatesProps>({} as StatesProps)
 function StatesProvider({children}: StatesChildren){
 
-    const [isOpen, setIsOpen] = useState(false)
+    const [value, setValue] = useState("")
     
     return(
-        <userAddStates.Provider value={{isOpen, setIsOpen}}>
+        <userAddStates.Provider value={{value, setValue}}>
             {children}
         </userAddStates.Provider> 
     )

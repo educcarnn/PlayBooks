@@ -10,85 +10,72 @@ import { Pagination } from "swiper";
 import { Header } from "../../components/Header";
 
 import { userAddApi } from "../../providers/Api";
-import Description from "../../components/Description";
-import { userAddStates } from "../../providers/States";
+
+import { ContentsLi } from "./style";
+import { userFavorites } from "../../providers/Favorites";
 
 export function Contents() {
   const { list } = useContext(userAddApi);
-  const { isOpen, setIsOpen } = useContext(userAddStates);
-
-
-  // const open = (item: any) => {
-  //   const findId = list.find((param) => param.id === item.id);
-
-  //   if (findId) {
-  //     return null;
-  //   } else {
-  //     setIsOpen(true)
-  //   }
-
-  // }
+  const { favorites, SetFavorites } = useContext(userFavorites);
 
   return (
     <div>
       <Header />
       <div>
-        {/* <Swiper
-            slidesPerView={1}
-            spaceBetween={10}
-            pagination={{
-              clickable: true,
-            }}
-            breakpoints={{
-              "@0.00": {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              "@0.75": {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              "@1.00": {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-              "@1.50": {
-                slidesPerView: 4,
-                spaceBetween: 50,
-              },
-            }}
-            modules={[Pagination]}
-            className="mySwiper"
-          >
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={10}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            "@0.00": {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            "@0.75": {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            "@1.00": {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            "@1.50": {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {list?.map((item) => (
             <SwiperSlide>
-            
-              <div>Name 1 </div>
-              <div>Name 2 </div>
-            </SwiperSlide>
-          </Swiper> */}
-        {list?.map((item) => (
-          <li key={item.id}>
-            <div>
-              <div>
-                <img src={item.volumeInfo.imageLinks.thumbnail} alt="" />
-              </div>
-              <div>
+              <ContentsLi key={item.id}>
+                <div>
+                  <img
+                    src={item.volumeInfo.imageLinks.thumbnail}
+                    alt=""
+                    className="img"
+                  />
+                  {/* <button onClick={() => SetFavorites(item)}>FAV</button> */}
+                </div>
+                <div>
                   <p>{item.volumeInfo.title}</p>
-                  <p>{item.volumeInfo.publishedDate}</p>
-                  <span>{item.volumeInfo.pageCount}</span>
-              </div>
-              <div>
-                <span>{item.volumeInfo.language}</span>
-                <span>{item.volumeInfo.printType}</span>
-                <a href={item.volumeInfo.previewLink} target="_blank">
-                  Mais informações
-                </a>
-              </div>
-            </div>
-          </li>
-        ))}
-
-  
+                  <p>Publicação {item.volumeInfo.publishedDate}</p>
+                  <span>Número de páginas: {item.volumeInfo.pageCount}</span>
+                </div>
+                <div>
+                  <span>Linguagem: {item.volumeInfo.language} </span>
+                  <span>{item.volumeInfo.printType}</span>
+                  <a href={item.volumeInfo.previewLink} target="blank">
+                    Mais informações
+                  </a>
+                </div>
+              </ContentsLi>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );

@@ -1,11 +1,10 @@
+import { useState } from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import { Contents } from "../pages/Contents";
 import { Home } from "../pages/Home";
 
 export const Routes = () => {
-
   
-
   return(
     <BrowserRouter>
     <Switch>
@@ -13,7 +12,7 @@ export const Routes = () => {
           <Home />
         </Route>
         <Route exact path="/contents">
-          <Contents />
+          <Contents/>
         </Route>
         <Route exact path="*">
           <div>
