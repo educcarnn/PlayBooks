@@ -1,23 +1,30 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { HeaderDiv } from "./style";
 
-import { userFavorites } from "../../providers/Favorites";
-import { userAddApi } from "../../providers/Api";
 
+
+
+import { userAddStates } from "../../providers/States";
 export function Header() {
-  const [valueFilter, setValueFilter] = useState<string>("");
 
-  const { setFilter, filter } = useContext(userAddApi);
+  const {value, setValue} = useContext(userAddStates)
+  const FilterValueItens = (event: any) => {
+    setValue(event.target.value);
+  };
 
   return (
     <HeaderDiv>
       <div>Play Books</div>
       <div>
-        <input type="text" placeholder="Pesquiso o nome do seu livro" />
+        <input
+          type="text"
+          placeholder="Pesquiso o nome do seu livro"
+          onChange={FilterValueItens}
+        />
       </div>
-      {valueFilter !== "" ? (
+      {value !== "" ? (
         <div>
-          <span>Resultados para: {valueFilter}</span>
+          <span>Resultados para: {value}</span>
         </div>
       ) : null}
     </HeaderDiv>
