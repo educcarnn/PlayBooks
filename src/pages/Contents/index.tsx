@@ -17,7 +17,7 @@ export function Contents() {
   const { list } = useContext(userAddApi);
   const { isOpen, setIsOpen } = useContext(userAddStates);
 
-  console.log(list);
+
   // const open = (item: any) => {
   //   const findId = list.find((param) => param.id === item.id);
 

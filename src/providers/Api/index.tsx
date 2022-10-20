@@ -16,15 +16,13 @@ interface ListProps {
   volumeInfo: {
     title: string;
     imageLinks: {
-        thumbnail: string;
-    }
-        
-  
+      thumbnail: string;
+    };
     language: string;
     printType: string;
     description: string;
     previewLink: string;
-    publishedDate:string;
+    publishedDate: string;
     pageCount: number;
   };
 }
@@ -56,4 +54,3 @@ export function ApiProvider({ children }: ApiChildren) {
     </userAddApi.Provider>
   );
 }
-
