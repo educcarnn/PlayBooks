@@ -16,7 +16,7 @@ export function Contents() {
         </div>
       ) : (
         <div>
-          
+          <Header/>
           <ListItems />
         </div>
       )}

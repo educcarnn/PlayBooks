@@ -21,7 +21,7 @@ export function ListItems() {
 
   return (
     <div>
-      <Header />
+      
       <div>
         <Swiper
           slidesPerView={1}

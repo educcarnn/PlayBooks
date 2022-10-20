@@ -64,7 +64,7 @@ function FilteredItems() {
               <div>
                 <img
                   src={filteredProducts.volumeInfo.imageLinks.thumbnail}
-                  alt=""
+                  alt={filteredProducts.volumeInfo.imageLinks.thumbnail}
                   className="img"
                 />
               </div>
