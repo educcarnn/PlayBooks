@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import "../../styles/App.css";
 
 import { Pagination } from "swiper";
-import { Header } from "../../components/Header";
 
 import { userAddApi } from "../../providers/Api";
 
