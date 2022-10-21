@@ -16,7 +16,7 @@ import { ContentsLi } from "./style";
 
 export function ListItems() {
   const { list } = useContext(userAddApi);
- 
+
 
   return (
     <div>
@@ -58,15 +58,15 @@ export function ListItems() {
                     alt=""
                     className="img"
                   />
-                  {/* <button onClick={() => SetFavorites(item)}>FAV</button> */}
-                </div>
+                    </div>
                 <div>
                   <p>{item.volumeInfo.title}</p>
                   <p>Publicação {item.volumeInfo.publishedDate}</p>
                   <span>Número de páginas: {item.volumeInfo.pageCount}</span>
                 </div>
                 <div>
-                  <span>Linguagem: {item.volumeInfo.language} </span>
+                  <span>Linguagem: {item.volumeInfo.langu           
+age} </span>
                   <span>{item.volumeInfo.printType}</span>
                   <a href={item.volumeInfo.previewLink} target="blank">
                     Mais informações
