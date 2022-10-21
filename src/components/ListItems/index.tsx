@@ -20,7 +20,7 @@ export function ListItems() {
 
   return (
     <div>
-      
+     
       <div>
         <Swiper
           slidesPerView={1}
@@ -54,21 +54,21 @@ export function ListItems() {
               <ContentsLi key={item.id}>
                 <div>
                   <img
-                    src={item.volumeInfo.imageLinks.thumbnail}
+                    src={item.volumeInfo?.imageLinks.thumbnail}
                     alt=""
                     className="img"
                   />
-                    </div>
-                <div>
-                  <p>{item.volumeInfo.title}</p>
-                  <p>Publicação {item.volumeInfo.publishedDate}</p>
-                  <span>Número de páginas: {item.volumeInfo.pageCount}</span>
+
                 </div>
                 <div>
-                  <span>Linguagem: {item.volumeInfo.langu           
-age} </span>
-                  <span>{item.volumeInfo.printType}</span>
-                  <a href={item.volumeInfo.previewLink} target="blank">
+                  <p>{item.volumeInfo?.title}</p>
+                  <p>Publicação {item.volumeInfo?.publishedDate}</p>
+                  <span>Número de páginas: {item.volumeInfo?.pageCount}</span>
+                </div>
+                <div>
+                  <span>Linguagem: {item.volumeInfo?.language} </span>
+                  <span>{item.volumeInfo?.printType}</span>
+                  <a href={item.volumeInfo?.previewLink} target="blank">
                     Mais informações
                   </a>
                 </div>

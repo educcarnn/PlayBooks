@@ -17,4 +17,5 @@ Possibilidades do usuário dentro do projeto:
 - Conter informações prévias sobre determinado livro (Como Data da publicação, número de páginas); 
 - Ser redirecionado para mais informações sobre o livro;
 - Filtrar livros de acordo a pesquisa;
+- Filtrar livros de acordo com a data da pub
 
