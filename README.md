@@ -14,6 +14,6 @@ Ações do usuário dentro do projeto:
 - Ser redirecionado para mais informações sobre o livro;
 
 Possibilidades de filtros 
-- Filtrar livros de acordo a nome do livro;
-- Filtrar livros de acordo com a data da publicação;
+- Filtrar livros de acordo a nome do livro ou pelo idioma do livro ;
+
 

@@ -27,7 +27,7 @@ export function Contents() {
         </div>
       )}
       <div>
-        <ReactPlayer url="https://www.youtube.com/shorts/lRjDjgwsR2U" />
+         <ReactPlayer url="http://www.youtube.com/shorts/lRjDjgwsR2U" /> 
       </div>
       <Articles />
       <Quotes />

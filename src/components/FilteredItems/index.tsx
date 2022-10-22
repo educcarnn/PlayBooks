@@ -14,6 +14,8 @@ function FilteredItems() {
   const { filter } = useContext(userAddApi);
   const { value } = useContext(userAddStates);
 
+  console.log(value)
+ console.log(filter.length)
   return (
     <div>
       <Swiper
@@ -44,11 +46,14 @@ function FilteredItems() {
         className="mySwiper"
       >
         <ul className="Ul-Father">
-          {filter?.filter((searchValue) => {
+          {filter
+            ?.filter((searchValue) => {
               if (value === "") {
                 return null;
               } else if (
-                searchValue.volumeInfo?.title.toLowerCase().includes(value.toString().toLowerCase())||searchValue.volumeInfo.publishedDate.toLowerCase().includes(value.toString().toLowerCase())
+                searchValue?.volumeInfo?.title
+                  .toLowerCase()
+                  .includes(value.toString().toLowerCase())
               ) {
                 return searchValue;
               } else {
@@ -57,37 +62,43 @@ function FilteredItems() {
             })
             .map((filteredProducts) => (
               <SwiperSlide>
-                <ContentsLi key={filteredProducts.id}>
-  
+                {filter.length === 0 ? (
+                  <div>
+                    <div>Nenhum livro encontrado</div>
+                  </div>
+                ) : (
+                  <ContentsLi key={filteredProducts.id}>
                   <div>
                     <img
-                      src={filteredProducts.volumeInfo.imageLinks.thumbnail}
-                      alt={filteredProducts.volumeInfo.imageLinks.thumbnail}
+                      src={filteredProducts?.volumeInfo?.imageLinks.thumbnail}
+                      alt={filteredProducts?.volumeInfo?.imageLinks.thumbnail}
                       className="img"
                     />
                   </div>
                   <div>
-                    <p>{filteredProducts.volumeInfo.title}</p>
+                    <p>{filteredProducts?.volumeInfo?.title}</p>
                     <p>
-                      Publicação {filteredProducts.volumeInfo.publishedDate}
+                      Publicação {filteredProducts?.volumeInfo?.categories}
                     </p>
                     <span>
-                      Número de páginas: {filteredProducts.volumeInfo.pageCount}
+                      Número de páginas:{" "}
+                      {filteredProducts?.volumeInfo?.pageCount}
                     </span>
                   </div>
                   <div>
                     <span>
-                      Linguagem: {filteredProducts.volumeInfo.language}{" "}
+                      Linguagem: {filteredProducts?.volumeInfo?.language}{" "}
                     </span>
-                    <span>{filteredProducts.volumeInfo.printType}</span>
+                    <span>{filteredProducts?.volumeInfo?.printType}</span>
                     <a
-                      href={filteredProducts.volumeInfo.previewLink}
+                      href={filteredProducts?.volumeInfo?.previewLink}
                       target="blank"
                     >
                       Mais informações
                     </a>
                   </div>
                 </ContentsLi>
+                )}
               </SwiperSlide>
             ))}
         </ul>

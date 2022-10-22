@@ -46,18 +46,18 @@ export function ListItems() {
           className="mySwiper"
         >
           {list?.map((item) => (
-            <SwiperSlide>
+            <SwiperSlide key={item.id}>
               <ContentsLi key={item?.id}>
                 <div>
                   <img
-                    src={item.volumeInfo?.imageLinks.thumbnail}
+                    src={item?.volumeInfo?.imageLinks.thumbnail}
                     alt=""
                     className="img"
                   />
                 </div>
                 <div>
                   <p>{item?.volumeInfo?.title}</p>
-                  <p>Publicação {item?.volumeInfo?.publishedDate}</p>
+    
                   <span>Número de páginas: {item?.volumeInfo?.pageCount}</span>
                 </div>
                 <div>

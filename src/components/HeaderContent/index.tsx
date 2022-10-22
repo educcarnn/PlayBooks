@@ -1,9 +1,6 @@
 import { SetStateAction, useContext} from "react";
 import { HeaderDiv } from "./style";
 
-
-
-
 import { userAddStates } from "../../providers/States";
 export function Header() {
 
@@ -22,7 +19,7 @@ export function Header() {
           onChange={FilterValueItens}
         />
       </div>
-      {console.log(value)}
+      
       {value !== "" ? (
         <div>
           <span>Resultados para: {value}</span>

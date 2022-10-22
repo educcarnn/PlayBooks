@@ -15,15 +15,16 @@ function SelectItens() {
   return (
     <div>
       <div>
-        <label>Filtre pelo ano da publicação</label>
-        <select onChange={handleItemChange}>
+        
+        {/* <select onChange={handleItemChange}>
           <option value="">Ano da publicação</option>
           {category?.map((item) => (
-            <option key={item.id} value={item.volumeInfo?.publishedDate}>
-              {item.volumeInfo?.publishedDate}
+  
+            <option key={item.id} value={item.volumeInfo?.subtitle}>
+              {item.volumeInfo?.subtitle}
             </option>
-          ))}
-        </select>
+          ))} 
+        </select> */}
       </div>
     </div>
   );

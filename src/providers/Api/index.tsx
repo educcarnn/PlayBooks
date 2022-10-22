@@ -14,6 +14,7 @@ export interface ListProps {
     country: string;
   };
   volumeInfo: {
+    categories: ReactNode;
     title: string;
     imageLinks: {
       thumbnail: string;
@@ -22,7 +23,7 @@ export interface ListProps {
     printType: string;
     description: string;
     previewLink: string;
-    publishedDate: string;
+    subtitle: string;
     pageCount: number;
   };
 }
@@ -50,13 +51,13 @@ export function ApiProvider({ children }: ApiChildren) {
 
   useEffect(() => {
     api.get("/volumes?q=search+terms").then((res) => {
-      setList(res.data?.items);
-      setFilter(res.data?.items);
-      setCategory(res.data?.items);
+      setList(res?.data?.items);
+      setFilter(res?.data?.items);
+      setCategory(res?.data?.items);
     });
   }, []);
 
-
+  console.log(filter)
   return (
     <userAddApi.Provider value={{ list, setList, filter, setFilter, category, setCategory }}>
       {children}
