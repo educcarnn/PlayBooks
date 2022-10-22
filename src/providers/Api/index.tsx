@@ -9,7 +9,7 @@ import {
 import { api } from "../../services/api";
 
 export interface ListProps {
-  id: string;
+  id?: string;
   saleInfo: {
     country: string;
   };

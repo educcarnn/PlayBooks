@@ -44,12 +44,11 @@ function FilteredItems() {
         className="mySwiper"
       >
         <ul className="Ul-Father">
-          {filter
-            .filter((searchValue) => {
+          {filter?.filter((searchValue) => {
               if (value === "") {
                 return null;
               } else if (
-                searchValue.volumeInfo.title.toLowerCase().includes(value.toString().toLowerCase())||searchValue.volumeInfo.publishedDate.toLowerCase().includes(value.toString().toLowerCase())
+                searchValue.volumeInfo?.title.toLowerCase().includes(value.toString().toLowerCase())||searchValue.volumeInfo.publishedDate.toLowerCase().includes(value.toString().toLowerCase())
               ) {
                 return searchValue;
               } else {
@@ -59,6 +58,7 @@ function FilteredItems() {
             .map((filteredProducts) => (
               <SwiperSlide>
                 <ContentsLi key={filteredProducts.id}>
+  
                   <div>
                     <img
                       src={filteredProducts.volumeInfo.imageLinks.thumbnail}

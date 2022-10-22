@@ -4,7 +4,7 @@ import { words } from "../../services/words";
 function Quotes() {
 
   
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0 as number);
 
   useEffect(() => {
     setTimeout(() => {

@@ -1,28 +1,26 @@
-import { useContext } from "react";
+import { SetStateAction, useContext } from "react";
 import { userAddApi } from "../../providers/Api";
 import { userAddStates } from "../../providers/States";
 
 function SelectItens() {
-  const { category, setFilter, filter } = useContext(userAddApi);
-  const { value, setValue } = useContext(userAddStates);
+  const { category } = useContext(userAddApi);
+  const { setValue } = useContext(userAddStates);
 
-  const handleFruitChange = (e: any) => {
+  const handleItemChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setValue(e.target.value);
   };
-
-  console.log(category);
 
   return (
     <div>
       <div>
         <label>Filtre pelo ano da publicação</label>
-        <select onChange={handleFruitChange}>
-          <option value="">
-            Ano da publicação
-          </option>
-          {category?.map((fruit: any) => (
-            <option key={fruit.id} value={fruit.volumeInfo?.publishedDate}>
-              {fruit.volumeInfo?.publishedDate}
+        <select onChange={handleItemChange}>
+          <option value="">Ano da publicação</option>
+          {category?.map((item) => (
+            <option key={item.id} value={item.volumeInfo?.publishedDate}>
+              {item.volumeInfo?.publishedDate}
             </option>
           ))}
         </select>
