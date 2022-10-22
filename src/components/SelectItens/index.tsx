@@ -17,7 +17,7 @@ function SelectItens() {
       <div>
         <label>Filtre pelo ano da publicação</label>
         <select onChange={handleFruitChange}>
-          <option value="Selecione a categoria do livro">
+          <option value="">
             Ano da publicação
           </option>
           {category?.map((fruit: any) => (

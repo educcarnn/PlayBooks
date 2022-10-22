@@ -31,8 +31,9 @@ interface ListData {
   list: ListProps[];
   setList: Dispatch<SetStateAction<ListProps[]>>;
   filter: ListProps[];
-  setFilter: Dispatch<SetStateAction<ListProps[]>> | any;
+  setFilter: Dispatch<SetStateAction<ListProps[]>>;
   category: ListProps[];
+ 
   setCategory: Dispatch<SetStateAction<ListProps[]>>;
 }
 
