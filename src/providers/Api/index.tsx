@@ -34,7 +34,7 @@ interface ListData {
   filter: ListProps[];
   setFilter: Dispatch<SetStateAction<ListProps[]>>;
   category: ListProps[];
- 
+
   setCategory: Dispatch<SetStateAction<ListProps[]>>;
 }
 
@@ -47,7 +47,7 @@ export const userAddApi = createContext<ListData>({} as ListData);
 export function ApiProvider({ children }: ApiChildren) {
   const [list, setList] = useState<ListProps[]>([]);
   const [filter, setFilter] = useState<ListProps[]>([]);
-  const [category, setCategory] = useState<ListProps[]>([])
+  const [category, setCategory] = useState<ListProps[]>([]);
 
   useEffect(() => {
     api.get("/volumes?q=search+terms").then((res) => {
@@ -57,9 +57,10 @@ export function ApiProvider({ children }: ApiChildren) {
     });
   }, []);
 
-  console.log(filter)
   return (
-    <userAddApi.Provider value={{ list, setList, filter, setFilter, category, setCategory }}>
+    <userAddApi.Provider
+      value={{ list, setList, filter, setFilter, category, setCategory }}
+    >
       {children}
     </userAddApi.Provider>
   );

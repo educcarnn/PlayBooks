@@ -1,11 +1,14 @@
-import "../src/styles/App.css";
+
 import { Routes } from "./routes";
 import { ApiProvider } from "./providers/Api";
 import StatesProvider from "./providers/States";
+import { GlobalStyled } from "./styles/GlobalSyled";
+
 
 function App() {
   return (
-    <div className="App-header">
+    <div >
+      <GlobalStyled/>
       <ApiProvider>
         <StatesProvider>
           <Routes />
