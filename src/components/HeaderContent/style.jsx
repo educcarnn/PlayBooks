@@ -6,4 +6,9 @@ export const HeaderDiv = styled.div`
     flex-direction: column;
     align-items: center;
     color: #db202c;
+    
+    .spanTittle{
+        cursor: pointer;
+        font-weight: 900;
+    }
 `

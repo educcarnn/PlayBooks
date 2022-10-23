@@ -9,40 +9,17 @@ export function Home() {
 
   return (
     <HomeDiv>
-      <div>
+      <div className="contentItem">
         <span className="tittle">Play Books</span>
         <span>
-          Bem-vindo ao mundo da leitura, espaço dedicado à leitura, a melhorar
+          Bem-vindo ao mundo da leitura, espaço para melhorar
           seu conhecimento e proatividade
         </span>
       </div>
-      <span>"A leitura engrandece a alma." - Voltaire</span>
+      <span>"A leitura é, provavelmente, uma outra maneira de estar em um lugar." - José Saramago</span>
       <div>
         <button onClick={handleContents}>Ir para conteúdos</button>
       </div>
-      {/* <div>
-        <span>Planos</span>
-        <div>
-          <span>Plano FãLeitura</span>
-          <span> - Acesso a novidades em seu e-mail</span>
-          <div>
-            <div>Dicas de leituira</div>
-            <div>Recomendações toda sexta</div>
-            <div>Resumo de livros</div>
-          </div>
-          <span>Ligue para (xx)99999-9999</span>
-        </div> */}
-        {/* <div>   
-                <span>Plano</span>
-                <span> - Acesso a novidades em seu e-mail</span>
-                <div>
-                    <div>RECE/div>
-                    <div>Recomendações toda sexta</div>
-                    <div>Resumo de livros</div>
-                </div>
-                <button>Seja um fã leitura</button>
-            </div> */}
-      
-    </HomeDiv>
+  </HomeDiv>
   );
 }

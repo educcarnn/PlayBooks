@@ -1,21 +1,19 @@
 import { useContext } from "react";
 import { userAddApi } from "../../providers/Api";
 import { userAddStates } from "../../providers/States";
-import { ContentsLi } from "../../pages/Contents/style";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
-// import "../../styles/App.css";
 
 import { Pagination } from "swiper";
+import { ContentsLi } from "../ListItems/style";
 
 function FilteredItems() {
   const { filter } = useContext(userAddApi);
   const { value } = useContext(userAddStates);
 
-  console.log(value)
- console.log(filter.length)
   return (
     <div>
       <Swiper
@@ -53,6 +51,9 @@ function FilteredItems() {
               } else if (
                 searchValue?.volumeInfo?.title
                   .toLowerCase()
+                  .includes(value.toString().toLowerCase()) ||
+                searchValue?.volumeInfo?.language
+                  .toLowerCase()
                   .includes(value.toString().toLowerCase())
               ) {
                 return searchValue;
@@ -68,36 +69,35 @@ function FilteredItems() {
                   </div>
                 ) : (
                   <ContentsLi key={filteredProducts.id}>
-                  <div>
-                    <img
-                      src={filteredProducts?.volumeInfo?.imageLinks.thumbnail}
-                      alt={filteredProducts?.volumeInfo?.imageLinks.thumbnail}
-                      className="img"
-                    />
-                  </div>
-                  <div>
-                    <p>{filteredProducts?.volumeInfo?.title}</p>
-                    <p>
-                      Publicação {filteredProducts?.volumeInfo?.categories}
-                    </p>
-                    <span>
-                      Número de páginas:{" "}
-                      {filteredProducts?.volumeInfo?.pageCount}
-                    </span>
-                  </div>
-                  <div>
-                    <span>
-                      Linguagem: {filteredProducts?.volumeInfo?.language}{" "}
-                    </span>
-                    <span>{filteredProducts?.volumeInfo?.printType}</span>
-                    <a
-                      href={filteredProducts?.volumeInfo?.previewLink}
-                      target="blank"
-                    >
-                      Mais informações
-                    </a>
-                  </div>
-                </ContentsLi>
+                    <div>
+                      <img
+                        src={filteredProducts?.volumeInfo?.imageLinks.thumbnail}
+                        alt={filteredProducts?.volumeInfo?.imageLinks.thumbnail}
+                        className="img"
+                      />
+                    </div>
+                    <div className="itemContent">
+                      <p className="text">
+                        {filteredProducts?.volumeInfo?.title}
+                      </p>
+                      <span>
+                        Número de páginas:{" "}
+                        {filteredProducts?.volumeInfo?.pageCount}
+                      </span>
+                    </div>
+                    <div className="itemContent">
+                      <span>
+                        Linguagem: {filteredProducts?.volumeInfo?.language}{" "}
+                      </span>
+                      <span>{filteredProducts?.volumeInfo?.printType}</span>
+                      <a
+                        href={filteredProducts?.volumeInfo?.previewLink}
+                        target="blank"
+                      >
+                        Mais informações
+                      </a>
+                    </div>
+                  </ContentsLi>
                 )}
               </SwiperSlide>
             ))}

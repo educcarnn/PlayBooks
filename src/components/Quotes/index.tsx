@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { words } from "../../services/words";
+import { QuotesDiv } from "./style";
 
 function Quotes() {
 
-  
   const [index, setIndex] = useState(0 as number);
 
   useEffect(() => {
@@ -16,9 +16,9 @@ function Quotes() {
   });
 
   return (
-    <div>
+    <QuotesDiv>
         <div>{words[index]}</div>
-    </div>
+    </QuotesDiv>
   );
 }
 

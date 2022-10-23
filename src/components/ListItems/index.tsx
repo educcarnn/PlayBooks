@@ -5,11 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-
 import { Pagination } from "swiper";
 
 import { userAddApi } from "../../providers/Api";
-
 import { ContentsLi } from "./style";
 
 export function ListItems() {
@@ -17,6 +15,7 @@ export function ListItems() {
 
   return (
     <div>
+       <span>Livros</span>
       <div>
         <Swiper
           slidesPerView={1}
@@ -55,14 +54,13 @@ export function ListItems() {
                     className="img"
                   />
                 </div>
-                <div>
-                  <p>{item?.volumeInfo?.title}</p>
-    
+                <div className="itemContent">
+                  <p className="text">{item?.volumeInfo?.title}</p>
                   <span>Número de páginas: {item?.volumeInfo?.pageCount}</span>
                 </div>
-                <div>
+                <div className="itemContent">
                   <span>Linguagem: {item?.volumeInfo?.language} </span>
-                  <span>{item?.volumeInfo?.printType}</span>
+                  <span>Tipo: {item?.volumeInfo?.printType}</span>
                   <a href={item?.volumeInfo?.previewLink} target="blank">
                     Mais informações
                   </a>
