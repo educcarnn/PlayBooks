@@ -8,6 +8,7 @@ export const GlobalStyled = createGlobalStyle`
     box-sizing: border-box;
     button{
       border: none;
+      cursor: pointer;
     }
     li{
       list-style: none;
