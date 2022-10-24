@@ -1,5 +1,7 @@
 
 Uma aplicação que busca dados da API do Google Books, com entuito de mostra informações sobre o livros e aspectos da leitura
+
+
 **Tecnologias utilizadas**
 - React 
 - Context API
