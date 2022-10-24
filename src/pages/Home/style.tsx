@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import background from "../../assets/imgsb/pexels-julie-carver-8473699.jpg";
+import background from "../../assets/imgsbackground/pexels-julie-carver-8473699.jpg";
 
 export const HomeDiv = styled.div`
   width: 100%;
@@ -16,7 +16,6 @@ export const HomeDiv = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: inset 0 0 40em black;
-
 
   .text{
     font-weight: 700;
@@ -80,6 +79,22 @@ export const HeaderContent = styled.div`
   gap: 2%;
   padding-bottom: 1rem;
 
+  .labelItem{
+    background: #fcfcfc;
+    border: none;
+  }
+
+  .showBooks{
+    padding: 8px;
+    border-radius: 24px;
+    color: #ff0000;
+    border: none;
+    font-weight: 700;
+  }
+  .labelItem::placeholder{
+    font-family: 'Inter', sans-serif;
+  }
+
   .ButtonAction {
     color: #ff0000;
     padding: 8px 32px;
@@ -94,6 +109,7 @@ export const HeaderContent = styled.div`
   .elements {
     display: flex;
     flex-direction: row;
+    padding-top: 0.5rem;
     gap: 1%;
   }
 `;

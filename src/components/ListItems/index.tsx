@@ -45,7 +45,7 @@ export function ListItems() {
           className="mySwiper"
         >
           {list?.map((item) => (
-            <SwiperSlide key={item.id}>
+            <SwiperSlide key={item?.id}>
               <ContentsLi key={item?.id}>
                 <div>
                   <img

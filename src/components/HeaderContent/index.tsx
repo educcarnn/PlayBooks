@@ -36,7 +36,7 @@ export function Header() {
       </div>
       <div>
         <div className="elements">
-          <label className="labelItem">Pesquise o seu livro</label>
+          <label>Pesquise o seu livro</label>
           <input
             type="text"
             placeholder="Nome do livro ou idioma "
@@ -47,7 +47,7 @@ export function Header() {
         {value !== "" ? (
           <div className="elements">
             <span>Resultados para: {value}</span>
-            <button onClick={clearBooks}>Mostrar todos os livros</button>
+            <button onClick={clearBooks} className="showBooks">Mostrar todos os livros</button>
           </div>
         ) : null}
       </div>

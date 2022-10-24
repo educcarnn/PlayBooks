@@ -1,54 +1,154 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useStopwatch } from "react-timer-hook";
 import { RoutinesDiv } from "./style";
 
 function Routines() {
-  const { seconds, minutes, hours, days, isRunning, start, pause, reset } =
-    useStopwatch({autoStart: false});
-  const handleClear = () => {};
+  const { seconds, minutes, hours, start, pause, reset } = useStopwatch({
+    autoStart: false,
+  });
+
   let history = useHistory();
   const handleHome = () => {
     history.push("/contents");
   };
-  interface nameProps {
+  interface listProps {
     name: string;
     autor: string;
   }
-  const [nameBook, setNameBook] = useState();
+  const [list, setList] = useState<listProps[]>([]);
+  const [name, setName] = useState<string>("");
+  const [autor, setAutor] = useState<string>("");
 
-  return (
-    <RoutinesDiv>
-      <div className="play" onClick={handleHome}>
-        Play Book
-      </div>
-      <div>
-        Liste as suas leituras e temporize o seu tempo, para melhorar seu foco e
-        concentração
-      </div>
-      <div>
-        <input type="text" placeholder="Escreva o nome do seu livro" />
-        <button>Adicionar livro</button>
-        <button>Digite o autor do livro</button>
-        <button onClick={handleClear}>Excluir Livro</button>
-      </div>
+  const handleSubmit = (name: string, autor: string) => {
+    const book = { name, autor };
 
-      <div>
-        <div>Temporizador</div>
-        <div style={{ textAlign: "center" }}>
-          <h1>react-timer-hook</h1>
-          <p>Stopwatch Demo</p>
-          <div style={{ fontSize: "100px" }}>
-            <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:
-            <span>{seconds}</span>
-          </div>
-          <p>{isRunning ? "Running" : "Not running"}</p>
-          <button onClick={start}>Start</button>
-          <button onClick={pause}>Pause</button>
-          {/* <button onClick={reset}>Reset</button>  */}
+    setList([...list, book]);
+  };
+
+  const handleClear = () => {
+    setList([]);
+  };
+
+  if (list.length === 3) {
+    return (
+      <RoutinesDiv>
+        <div className="play" onClick={handleHome}>
+          Play Book
         </div>
-      </div>
-    </RoutinesDiv>
-  );
+        <div>
+          Liste as suas leituras e temporize o seu tempo, para melhorar o foco
+          e concentração
+        </div>
+        <div className="tempError">
+          Máximo de 3 livros adicionado (Remover livros para adicionar mais)
+        </div>
+        <div className="elemsBooks">
+          <input
+            type="text"
+            className="inputButton"
+            placeholder="Nome do seu livro"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="text"
+            className="inputButton"
+            placeholder="Autor do seu livro"
+            onChange={(e) => setAutor(e.target.value)
+            }
+          />
+          <div className="elemsButtons">
+            <button className="buttonElem">Adicionar livro</button>
+            <button onClick={handleClear} className="buttonElem">
+              Remover livros
+            </button>
+          </div>
+
+          <ul className="ulList">
+            {list?.map((item, index) => (
+              <li key={index}>
+                <div>Nome: {item.name}</div>
+                <div>Autor: {item.autor}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="temp">
+          <div>Temporizador</div>
+          <div className="elemsButtons">
+            <button onClick={start}>Start</button>
+            <button onClick={pause}>Pause</button>
+            <button onClick={() => reset()}>Reset</button>
+          </div>
+          <div style={{ textAlign: "center" }}>
+            <div style={{ fontSize: "72px" }}>
+              <span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
+            </div>
+          </div>
+        </div>
+      </RoutinesDiv>
+    );
+  } else {
+    return (
+      <RoutinesDiv>
+        <div className="play" onClick={handleHome}>
+          Play Book
+        </div>
+        <div>
+          Liste as suas leituras e temporize o seu tempo, para melhorar o foco
+          e concentração
+        </div>
+        <div className="elemsBooks">
+          <input
+            type="text"
+            className="inputButton"
+            placeholder="Nome do seu livro"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="text"
+            className="inputButton"
+            placeholder="Autor do seu livro"
+            onChange={(e) => setAutor(e.target.value)}
+          />
+          <div className="elemsButtons">
+            <button
+              onClick={() => handleSubmit(name, autor)}
+              className="buttonElem"
+            >
+              Adicionar livro
+            </button>
+            <button onClick={handleClear} className="buttonElem">
+              Remover livros
+            </button>
+          </div>
+
+          <ul className="ulList">
+            {list?.map((item, index) => (
+              <li key={index}>
+                <div>Nome: {item.name}</div>
+                <div>Autor: {item.autor}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="temp">
+          <div>Temporizador</div>
+          <div className="elemsButtons">
+            <button onClick={start}>Start</button>
+            <button onClick={pause}>Pause</button>
+            <button onClick={() => reset()}>Reset</button>
+          </div>
+          <div style={{ textAlign: "center" }}>
+            <div style={{ fontSize: "72px" }}>
+              <span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
+            </div>
+          </div>
+        </div>
+      </RoutinesDiv>
+    );
+  }
 }
 export default Routines;

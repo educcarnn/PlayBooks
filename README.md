@@ -1,13 +1,16 @@
-Aplicação com base a interface Netflix
-
-
 
 Uma aplicação que busca dados da API do Google Books, com entuito de mostra informações sobre o livros e aspectos da leitura
 
 Para rodar o projeto, na sua máquina, utilize:
 
-yarn 
-yarn start
+**yarn** 
+
+
+**yarn start**
+
+
+<a href="">Vercel</a>
+
 
 Ações do usuário dentro do projeto: 
 - Conter informações prévias sobre determinado livro (Como Data da publicação, número de páginas, capa do livro...); 

@@ -68,7 +68,7 @@ function FilteredItems() {
                     <div>Nenhum livro encontrado</div>
                   </div>
                 ) : (
-                  <ContentsLi key={filteredProducts.id}>
+                  <ContentsLi key={filteredProducts?.id}>
                     <div>
                       <img
                         src={filteredProducts?.volumeInfo?.imageLinks.thumbnail}

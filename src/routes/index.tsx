@@ -28,7 +28,6 @@ export const Routes = () => {
         <Route path="*">
           <ErrorPage />
         </Route>
-      
       </Switch>
     </BrowserRouter>
   );
