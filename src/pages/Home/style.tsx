@@ -17,6 +17,49 @@ export const HomeDiv = styled.div`
   background-size: cover;
   box-shadow: inset 0 0 40em black;
 
+
+  .text{
+    font-weight: 700;
+    color: white;
+  }
+
+
+  .button {
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  .button, .class{
+    color: #ff0202;
+  }
+  
+  @-webkit-keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+      opacity: 1;
+    }
+  }
   .contentItem {
     display: flex;
     flex-direction: column;
@@ -32,15 +75,23 @@ export const HomeDiv = styled.div`
   }
 `;
 export const HeaderContent = styled.div`
-      display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   gap: 2%;
   padding-bottom: 1rem;
 
-  .spanRotina {
+  .ButtonAction {
     color: #ff0000;
+    padding: 8px 32px;
+    font-size: 16px;
+    background: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
   }
-  .elements{
+  .elements {
     display: flex;
     flex-direction: row;
     gap: 1%;

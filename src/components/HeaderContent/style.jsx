@@ -7,6 +7,10 @@ export const HeaderDiv = styled.div`
     align-items: center;
     color: #db202c;
     
+
+    .labelItem{
+        font-family: 'Inter', sans-serif;
+    }
     .spanTittle{
         cursor: pointer;
         font-weight: 900;

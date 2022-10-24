@@ -18,7 +18,7 @@ export function Home() {
       </div>
       <span>"A leitura é, provavelmente, uma outra maneira de estar em um lugar." - José Saramago</span>
       <div>
-        <button onClick={handleContents}>Ir para conteúdos</button>
+        <button onClick={handleContents} className="button">Ir para conteúdos</button>
       </div>
   </HomeDiv>
   );

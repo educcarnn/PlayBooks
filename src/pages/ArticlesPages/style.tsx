@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
 export const ArticlesDiv = styled.div`
-      
-
   color: black;
   height: 100vh;
 
-  .elem{
+  .elem {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +28,7 @@ export const ArticlesDiv = styled.div`
 `;
 
 export const DivElem = styled.div`
-    font-weight: 900;
-    color: #db202c;
-    cursor: pointer;
-`
+  font-weight: 900;
+  color: #db202c;
+  cursor: pointer;
+`;

@@ -1,31 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { RoutinesDiv } from "./style";
 
 function Routines() {
-  const [nameBook, setNameBook] = useState(
-    JSON.parse(localStorage.getItem("books") as string)
-  );
+  const handleClear = () => {
 
-  const submitHandler = () => {
-    
+  
+  }
+  let history = useHistory();
+  const handleHome = () => {
+    history.push("/contents");
   };
+  interface nameProps{
+    name: string;
+    autor: string;
+  }
+  const [nameBook, setNameBook] = useState();
+
+ 
   return (
-    <div>
+    <RoutinesDiv>
+      <div className="play" onClick={handleHome}>Play Book</div>
       <div>
-        Liste as suas leituras e temporize o seu tempo, para melhorar a leitura
-        e aperfeiçoamento
+        Liste as suas leituras e temporize o seu tempo, para melhorar seu foco e
+        concentração
       </div>
       <div>
         <input type="text" placeholder="Escreva o nome do seu livro" />
-        <button onClick={submitHandler}></button>
+        <button>Adicionar livro</button>
+        <button>Digite o autor do livro</button>
+        <button onClick={handleClear}>Excluir Livro</button>
       </div>
-
-      <div>
-        <div>Livros</div>
-        {/* {nameBook?.map(() = > ({
-
-        ))} */}
-      </div>
-    </div>
+    
+      <div></div>
+    </RoutinesDiv>
   );
+  
 }
 export default Routines;

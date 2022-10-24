@@ -1,9 +1,10 @@
-
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import ImportanceReading from "../pages/ArticlesPages/ImportanceReading";
 import LessReaders from "../pages/ArticlesPages/LessReaders";
 import { Contents } from "../pages/Contents";
+import ErrorPage from "../pages/Error";
 import { Home } from "../pages/Home";
+import Routines from "../pages/Routines";
 
 export const Routes = () => {
   return (
@@ -19,13 +20,15 @@ export const Routes = () => {
           <ImportanceReading />
         </Route>
         <Route path="/menos-leitores">
-          <LessReaders/>
+          <LessReaders />
+        </Route>
+        <Route path="/rotina">
+          <Routines />
         </Route>
         <Route path="*">
-          <div>
-            <div>Página não encontrada</div>
-          </div>
+          <ErrorPage />
         </Route>
+      
       </Switch>
     </BrowserRouter>
   );

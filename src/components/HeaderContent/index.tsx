@@ -18,6 +18,10 @@ export function Header() {
   const clearBooks = () => {
     setValue("");
   };
+  
+  const handleContents = () => {
+   history.push("/rotina");
+ };
 
   return (
     <HeaderContent>
@@ -27,16 +31,17 @@ export function Header() {
         </span>
       </HeaderDiv>
       <div className="elements">
-        <button className="spanRotina">Rotina</button>
-        <button className="spanRotina">Artigos</button>
+        <button className="ButtonAction" onClick={handleContents}>Rotina</button>
+        <a className="ButtonAction" href='#artigos'>Artigos</a>
       </div>
       <div>
         <div className="elements">
-          <label>Pesquise o seu livro</label>
+          <label className="labelItem">Pesquise o seu livro</label>
           <input
             type="text"
-            placeholder="Nome do livro ou idioma"
+            placeholder="Nome do livro ou idioma "
             onChange={FilterValueItens}
+            className="labelItem"
           />
         </div>
         {value !== "" ? (

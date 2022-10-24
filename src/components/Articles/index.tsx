@@ -5,7 +5,7 @@ import { ArticlesUl } from "./style";
 function Articles() {
   return (
     <div>
-        <div>Artigos</div>
+        <div id="artigos">Artigos</div>
       <ArticlesUl>
         <li>
           <div>
@@ -13,7 +13,7 @@ function Articles() {
               Retratos da leitura no Brasil: por que estamos perdendo leitores
             </p>
             <span>Fonte: Cenpec </span>
-            <Link to="/menos-leitores"> Ler mais</Link>
+            <Link to="/menos-leitores" target="blank"> Ler mais</Link>
           </div>
         </li>
         
@@ -23,7 +23,7 @@ function Articles() {
             Qual é a importância da leitura na Educação Infantil?
             </p>
             <span>Fonte: Blog Leituirinha </span>
-            <Link to="/importancia-da-leitura">Ler mais</Link>
+            <Link to="/importancia-da-leitura" target="blank">Ler mais</Link>
           </div>
         </li>
       </ArticlesUl>

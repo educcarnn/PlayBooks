@@ -5,6 +5,8 @@ export const ArticlesUl = styled.ul`
   gap: 5%;
   flex-direction: row;
   justify-content: center;
+
+  
   @media(max-width: 800px){
     display: flex;
     flex-direction: column;
