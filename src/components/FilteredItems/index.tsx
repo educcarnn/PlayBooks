@@ -80,10 +80,13 @@ function FilteredItems() {
                       <p className="text">
                         {filteredProducts?.volumeInfo?.title}
                       </p>
-                      <span>
-                        Número de páginas:{" "}
-                        {filteredProducts?.volumeInfo?.pageCount}
-                      </span>
+                      {filteredProducts?.volumeInfo?.pageCount === undefined ? (
+                        <span>Número de páginas: Não informado</span>
+                      ) : (
+                        <span>
+                          Número de páginas: {filteredProducts?.volumeInfo?.pageCount}
+                        </span>
+                      )}
                     </div>
                     <div className="itemContent">
                       <span>
@@ -92,7 +95,8 @@ function FilteredItems() {
                       <span>{filteredProducts?.volumeInfo?.printType}</span>
                       <a
                         href={filteredProducts?.volumeInfo?.previewLink}
-                        target="blank"
+                        target="_blank"
+                        rel="noreferrer"
                       >
                         Mais informações
                       </a>

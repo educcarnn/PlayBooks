@@ -56,7 +56,11 @@ export function ListItems() {
                 </div>
                 <div className="itemContent">
                   <p className="text">{item?.volumeInfo?.title}</p>
+                  {item?.volumeInfo?.pageCount === undefined ? (
+                  <span>Número de páginas: Não informado</span>
+                  ): (
                   <span>Número de páginas: {item?.volumeInfo?.pageCount}</span>
+                  )}
                 </div>
                 <div className="itemContent">
                   <span>Linguagem: {item?.volumeInfo?.language} </span>

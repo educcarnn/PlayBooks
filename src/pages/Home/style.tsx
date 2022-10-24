@@ -109,6 +109,7 @@ export const HeaderContent = styled.div`
   .elements {
     display: flex;
     flex-direction: row;
+    word-break: break-all;
     padding-top: 0.5rem;
     gap: 1%;
   }

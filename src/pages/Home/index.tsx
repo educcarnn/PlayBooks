@@ -12,7 +12,7 @@ export function Home() {
       <div className="contentItem">
         <span className="tittle">Play Books</span>
         <span>
-          Bem-vindo ao mundo da leitura, espaço para melhorar
+          Bem-vindo ao mundo da leitura, espaço para aperfeiçoar
           seu conhecimento e proatividade
         </span>
       </div>

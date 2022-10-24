@@ -33,8 +33,8 @@ export const RoutinesDiv = styled.div`
     border: none;
   }
 
-  .inputButton::placeholder{
-    font-family: 'Inter', sans-serif;
+  .inputButton::placeholder {
+    font-family: "Inter", sans-serif;
   }
   .elemsBooks {
     display: flex;
@@ -45,7 +45,7 @@ export const RoutinesDiv = styled.div`
 
   .ulList {
     display: flex;
-    width: 90%;
+    width: 100%;
     gap: 2rem;
   }
 
@@ -56,5 +56,13 @@ export const RoutinesDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    .ulList {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;
