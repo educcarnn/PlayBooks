@@ -34,7 +34,7 @@ function Routines() {
     return (
       <RoutinesDiv>
         <div className="play" onClick={handleHome}>
-          Play Book
+          Play Books
         </div>
         <div>
           Liste as suas leituras e temporize o seu tempo, para melhorar o foco
@@ -93,7 +93,7 @@ function Routines() {
     return (
       <RoutinesDiv>
         <div className="play" onClick={handleHome}>
-          Play Book
+          Play Books
         </div>
         <div>
           Liste as suas leituras e temporize o seu tempo, para melhorar o foco
