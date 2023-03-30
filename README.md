@@ -19,7 +19,7 @@ Para rodar o projeto, na sua máquina, utilize:
 **yarn start**
 
 
-<a href="https://playbooks-eight.vercel.app">Vercel</a>
+<a href="https://playbooks-eight.vercel.app">Site</a>
 
 
 Ações do usuário dentro do projeto: 
