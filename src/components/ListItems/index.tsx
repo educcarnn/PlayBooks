@@ -49,7 +49,7 @@ export function ListItems() {
               <ContentsLi key={item?.id}>
                 <div>
                   <img
-                    src={item?.volumeInfo?.imageLinks.thumbnail}
+                    src={item?.volumeInfo?.imageLinks?.thumbnail}
                     alt=""
                     className="img"
                   />
