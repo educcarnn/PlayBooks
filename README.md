@@ -11,15 +11,15 @@ Uma aplicação que busca dados da API do Google Books, com entuito de mostra in
 - Styled Components
 
 
+**<a href="https://playbooks-eight.vercel.app">Site</a>**
+
+
 Para rodar o projeto, na sua máquina, utilize:
 
 **yarn** 
 
 
 **yarn start**
-
-
-<a href="https://playbooks-eight.vercel.app">Site</a>
 
 
 Ações do usuário dentro do projeto: 
